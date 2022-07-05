@@ -17,9 +17,6 @@ public class ApplicationDbContext : DbContext
             .WithOne(a => a.Note)
             .HasForeignKey<NoteImage>(c => c.NoteId);
     }
-    // public ApplicationDbContext()
-    // {
-    // }
 
     public DbSet<Note> Notes { get; set; }
     public DbSet<NoteCategory> Categories { get; set; }
