@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "yPUK7W/fQRilgxzuW/cteAAyqacb5pEC8ExPSkmOZnY/7Lt3hr/lk7HwuT/f7XnNTfyt2S3qydCjwrPmv0PInw==",
+  "success": true,
+  "projectFilePath": "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/crisc/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/crisc/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/crisc/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/crisc/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/crisc/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/crisc/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
