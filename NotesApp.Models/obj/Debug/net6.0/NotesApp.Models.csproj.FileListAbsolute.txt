@@ -1,0 +1,12 @@
+/Users/crisc/csharp/NotesApp/NotesApp.Models/bin/Debug/net6.0/NotesApp.Models.deps.json
+/Users/crisc/csharp/NotesApp/NotesApp.Models/bin/Debug/net6.0/NotesApp.Models.dll
+/Users/crisc/csharp/NotesApp/NotesApp.Models/bin/Debug/net6.0/NotesApp.Models.pdb
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.csproj.AssemblyReference.cache
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.AssemblyInfoInputs.cache
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.AssemblyInfo.cs
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.csproj.CoreCompileInputs.cache
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.dll
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/refint/NotesApp.Models.dll
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/NotesApp.Models.pdb
+/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/Debug/net6.0/ref/NotesApp.Models.dll

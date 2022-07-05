@@ -4,14 +4,14 @@
     "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj": {}
   },
   "projects": {
-    "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj": {
+    "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj",
-        "projectName": "NotesApp",
-        "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj",
+        "projectUniqueName": "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj",
+        "projectName": "NotesApp.Authentication",
+        "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj",
         "packagesPath": "/Users/crisc/.nuget/packages/",
-        "outputPath": "/Users/crisc/csharp/NotesApp/NotesApp/obj/",
+        "outputPath": "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/crisc/.nuget/NuGet/NuGet.Config"
@@ -37,7 +37,196 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj",
+        "projectName": "NotesApp.DataAccess",
+        "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj",
+        "packagesPath": "/Users/crisc/.nuget/packages/",
+        "outputPath": "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/crisc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj": {
+                "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj"
+              },
+              "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj": {
+                "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj",
+        "projectName": "NotesApp.Models",
+        "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj",
+        "packagesPath": "/Users/crisc/.nuget/packages/",
+        "outputPath": "/Users/crisc/csharp/NotesApp/NotesApp.Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/crisc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj",
+        "projectName": "NotesApp",
+        "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj",
+        "packagesPath": "/Users/crisc/.nuget/packages/",
+        "outputPath": "/Users/crisc/csharp/NotesApp/NotesApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/crisc/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj": {
+                "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp", "NotesApp\NotesApp.csproj", "{4B651A3C-B851-43C6-A3FC-3AF47F6EEE25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.DataAccess", "NotesApp.DataAccess\NotesApp.DataAccess.csproj", "{A2D4A726-0058-44FC-9F1C-9BBD991F23FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.BusinessLogic", "NotesApp.BusinessLogic\NotesApp.BusinessLogic.csproj", "{5F515459-88A2-4A9D-9585-A0486D8FF6F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Models", "NotesApp.Models\NotesApp.Models.csproj", "{CAB47095-DC14-48AB-B71B-434A043A5C5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesApp.Authentication", "NotesApp.Authentication\NotesApp.Authentication.csproj", "{71D902FB-80AE-408A-87E1-F994A1708F00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +20,27 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B651A3C-B851-43C6-A3FC-3AF47F6EEE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B651A3C-B851-43C6-A3FC-3AF47F6EEE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B651A3C-B851-43C6-A3FC-3AF47F6EEE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B651A3C-B851-43C6-A3FC-3AF47F6EEE25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2D4A726-0058-44FC-9F1C-9BBD991F23FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2D4A726-0058-44FC-9F1C-9BBD991F23FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2D4A726-0058-44FC-9F1C-9BBD991F23FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2D4A726-0058-44FC-9F1C-9BBD991F23FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F515459-88A2-4A9D-9585-A0486D8FF6F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F515459-88A2-4A9D-9585-A0486D8FF6F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F515459-88A2-4A9D-9585-A0486D8FF6F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F515459-88A2-4A9D-9585-A0486D8FF6F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB47095-DC14-48AB-B71B-434A043A5C5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB47095-DC14-48AB-B71B-434A043A5C5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB47095-DC14-48AB-B71B-434A043A5C5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB47095-DC14-48AB-B71B-434A043A5C5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D902FB-80AE-408A-87E1-F994A1708F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D902FB-80AE-408A-87E1-F994A1708F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D902FB-80AE-408A-87E1-F994A1708F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D902FB-80AE-408A-87E1-F994A1708F00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
