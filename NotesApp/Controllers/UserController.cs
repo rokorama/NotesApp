@@ -23,6 +23,9 @@ public class UserController : ControllerBase
     [HttpPost("createUser")]
     public ActionResult<User> AddUser([FromBody] UserDto userDto)
     {
+        var usernameTaken = _userService.GetUser(userDto.Username) == null ? true : false;
+        if (usernameTaken)
+            return BadRequest($"This username is taken, please try another");
         var result = _userService.PostUserToDb(userDto.Username, userDto.Password);
         if (result == null)
             return BadRequest();

@@ -15,48 +15,62 @@ public class NoteService : INoteService
         _categoryRepo = categoryRepo;
     }
 
-    public NoteCategory AddCategory()
+    public Category AddCategory(CategoryDto categoryDto)
+    {
+        return _categoryRepo.AddCategory(categoryDto);
+    }
+
+    public Note AddImage(Note note, Image image)
     {
         throw new NotImplementedException();
     }
 
-    public Note AddImage(Note note, NoteImage image)
+    public Note AddNote(NoteDto noteDto, Guid userId)
+    {
+        return _noteRepo.AddNote(noteDto, userId);
+    }
+
+    public Category EditCategory(Guid id, string editedName)
+    {
+        var editedCategory = new Category()
+        {
+            Id = id,
+            Name = editedName
+        };
+        return _categoryRepo.EditCategory(editedCategory);
+    }
+
+    public Note EditImage(Note note, Image image)
     {
         throw new NotImplementedException();
     }
 
-    public Note AddNote(NoteDto noteDto)
+    public Note EditNote(Guid id, Note note)
     {
-        return _noteRepo.AddNote(noteDto);
+        var editedNote = new Note()
+        {
+            Id = id,
+            UserId = note.UserId,
+            Title = note.Title,
+            Content = note.Content,
+            CategoryId = note.CategoryId,
+            ImageId = null
+        };
+        return _noteRepo.EditNote(editedNote);
     }
 
-    public NoteCategory EditCategory(NoteCategory category)
+    public bool RemoveCategory(Guid id)
+    {
+        return _categoryRepo.RemoveCategory(id);
+    }
+
+    public bool RemoveImage(Guid id)
     {
         throw new NotImplementedException();
     }
 
-    public Note EditImage(NoteImage image)
+    public bool RemoveNote(Guid id)
     {
-        throw new NotImplementedException();
-    }
-
-    public Note EditNote(Note note)
-    {
-        throw new NotImplementedException();
-    }
-
-    public NoteCategory RemoveCategory(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Note RemoveImage(Guid id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Note RemoveNote(Guid id)
-    {
-        throw new NotImplementedException();
+        return _noteRepo.RemoveNote(id);
     }
 }

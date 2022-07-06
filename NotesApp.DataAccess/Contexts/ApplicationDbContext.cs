@@ -10,16 +10,10 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Note>()
-            .HasOne(a => a.Image)
-            .WithOne(a => a.Note)
-            .HasForeignKey<NoteImage>(c => c.NoteId);
-    }
+ 
 
     public DbSet<Note> Notes { get; set; }
-    public DbSet<NoteCategory> Categories { get; set; }
-    public DbSet<NoteImage> Images { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Image> Images { get; set; }
     public DbSet<User> Users { get; set; }
 }

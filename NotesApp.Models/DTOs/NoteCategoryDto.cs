@@ -1,6 +1,6 @@
 namespace NotesApp.Models;
 
-public class NoteCategoryDto
+public class CategoryDto
 {
     public string Name { get; set; }
 }

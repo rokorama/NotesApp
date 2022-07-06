@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NotesApp.DataAccess;
 
@@ -11,9 +12,10 @@ using NotesApp.DataAccess;
 namespace NotesApp.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220706195504_Remove-redundant-column-from-Note")]
+    partial class RemoveredundantcolumnfromNote
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +24,40 @@ namespace NotesApp.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("NotesApp.Models.Category", b =>
+            modelBuilder.Entity("NotesApp.Models.Note", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ImageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("NoteCategoryId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NoteCategoryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notes");
+                });
+
+            modelBuilder.Entity("NotesApp.Models.NoteCategory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +71,7 @@ namespace NotesApp.DataAccess.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("NotesApp.Models.Image", b =>
+            modelBuilder.Entity("NotesApp.Models.NoteImage", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,36 +89,6 @@ namespace NotesApp.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Images");
-                });
-
-            modelBuilder.Entity("NotesApp.Models.Note", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid?>("ImageId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Notes");
                 });
 
             modelBuilder.Entity("NotesApp.Models.User", b =>
@@ -105,11 +110,9 @@ namespace NotesApp.DataAccess.Migrations
 
             modelBuilder.Entity("NotesApp.Models.Note", b =>
                 {
-                    b.HasOne("NotesApp.Models.Category", null)
+                    b.HasOne("NotesApp.Models.NoteCategory", null)
                         .WithMany("Notes")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("NoteCategoryId");
 
                     b.HasOne("NotesApp.Models.User", null)
                         .WithMany("Notes")
@@ -118,7 +121,7 @@ namespace NotesApp.DataAccess.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("NotesApp.Models.Category", b =>
+            modelBuilder.Entity("NotesApp.Models.NoteCategory", b =>
                 {
                     b.Navigation("Notes");
                 });

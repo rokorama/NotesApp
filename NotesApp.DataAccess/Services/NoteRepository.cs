@@ -11,16 +11,16 @@ public class NoteRepository : INoteRepository
     {
         _appDbContext = appDbContext;
     }
-    public Note AddNote(NoteDto noteDto)
+    public Note AddNote(NoteDto noteDto, Guid userId)
     {
         var entry = new Note()
         {
             Id = Guid.NewGuid(),
-            User = noteDto.User,
+            UserId = userId,
             Title = noteDto.Title,
             Content = noteDto.Content,
-            Category = noteDto.Category,
-            Image = noteDto.Image
+            CategoryId = noteDto.CategoryId,
+            ImageId = null
         };
         _appDbContext.Notes.Add(entry);
         var result = _appDbContext.SaveChanges();
@@ -29,13 +29,13 @@ public class NoteRepository : INoteRepository
         return entry;
     }
         
-    public Note EditNote(Guid id, Note editedNote)
+    public Note EditNote(Note editedNote)
     {
-        var dbEntry = _appDbContext.Notes.SingleOrDefault(a => a.Id == id);
+        var dbEntry = _appDbContext.Notes.SingleOrDefault(a => a.Id == editedNote.Id);
         dbEntry.Title = editedNote.Title;
         dbEntry.Content = editedNote.Content;
-        dbEntry.Category = editedNote.Category;
-        dbEntry.Image = editedNote.Image;
+        dbEntry.CategoryId = editedNote.CategoryId;
+        dbEntry.ImageId = editedNote.ImageId;
 
         _appDbContext.Entry(dbEntry).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         

@@ -11,9 +11,9 @@ public class CategoryRepository : ICategoryRepository
     {
         _appDbContext = appDbContext;
     }
-    public NoteCategory AddCategory(NoteCategoryDto categoryDto)
+    public Category AddCategory(CategoryDto categoryDto)
     {
-        var entry = new NoteCategory()
+        var entry = new Category()
         {
             Id = Guid.NewGuid(),
             Name = categoryDto.Name,
@@ -25,9 +25,9 @@ public class CategoryRepository : ICategoryRepository
         return entry;
     }
         
-    public NoteCategory EditCategory(Guid id, NoteCategory editedCategory)
+    public Category EditCategory(Category editedCategory)
     {
-        var dbEntry = _appDbContext.Categories.SingleOrDefault(a => a.Id == id);
+        var dbEntry = _appDbContext.Categories.SingleOrDefault(a => a.Id == editedCategory.Id);
         dbEntry.Name = editedCategory.Name;
 
         _appDbContext.Entry(dbEntry).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
