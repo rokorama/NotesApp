@@ -13,18 +13,28 @@ public class UserController : ControllerBase
     private readonly IJwtService _jwtService;
     private readonly ILogger _logger;
 
-    public UserController(ILogger<UserController> logger, IUserService userService, IJwtService jwtService)
+    public UserController(IUserService userService, IJwtService jwtService, ILogger<UserController> logger)
     {
-        _logger = logger;
         _userService = userService;
+        _jwtService = jwtService;
+        _logger = logger;
     }
 
     [HttpPost("createUser")]
-    public ActionResult<Note> AddUser([FromBody] UserDto userDto)
+    public ActionResult<User> AddUser([FromBody] UserDto userDto)
     {
-        var result = _userService.CreateUser(userDto.Username, userDto.Password);
+        var result = _userService.PostUserToDb(userDto.Username, userDto.Password);
         if (result == null)
             return BadRequest();
         return Ok(result);
+    }
+
+    [HttpPost("login")]
+    public ActionResult<string> Login(UserDto request)
+    {
+        if (!_userService.Login(request.Username, request.Password))
+            return BadRequest($"Incorrect credentials");
+        string token = _jwtService.GetJwtToken(request.Username);
+        return Ok(token);
     }
 }

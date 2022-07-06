@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using NotesApp.Models;
+using BCrypt;
 
 namespace NotesApp.Authentication;
 
@@ -27,35 +28,31 @@ public class UserService : IUserService
 
     public User CreateUser(string username, string password)
     {
-        CreatePassword(password, out byte[] passwordHash, out byte[] passwordSalt);
+        CreatePassword(password, out string passwordHash);
         var User = new User()
         {
             Id = Guid.NewGuid(),
             Username = username,
-            PasswordHash = passwordHash,
-            PasswordSalt = passwordSalt,
+            PasswordHash = passwordHash
         };
         return User;
     }
 
-    public void CreatePassword(string password, out byte[] passwordHash, out byte[] passwordSalt)
+    public void CreatePassword(string password, out string passwordHash)
     {
-        using var hmac = new HMACSHA512();
-        passwordSalt = hmac.Key;
-        passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+        passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
     }
 
     public bool Login(string username, string password)
     {
-        var User = GetUser(username);
-        if (User != null)
-            return true;
+        var user = GetUser(username);
+        if (user != null)
+            return VerifyPasswordHash(password, user.PasswordHash);
         return false;
-
     }
 
-    public bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+    public bool VerifyPasswordHash(string password, string storedHash)
     {
-        return true;
+        return BCrypt.Net.BCrypt.Verify(password, storedHash);
     }
 }

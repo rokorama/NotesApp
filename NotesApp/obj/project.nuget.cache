@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7bKnwwC0wL0/q46wMkgwZyQi+nFUzjSrL1t6nATPkALPYKygCj6cjYgdqjn/PcDfs8zS9QKMYv2tR1xfiVV6qw==",
+  "dgSpecHash": "S0bwDzUoK5oLZfkIe/ehk/tYTrGITSEssaS/WrboZMTKh/z6tXpl+B0c+C3aiFublXsn0GUIXHRuTlPj4bQ8sQ==",
   "success": true,
   "projectFilePath": "/Users/crisc/csharp/NotesApp/NotesApp/NotesApp.csproj",
   "expectedPackageFiles": [
+    "/Users/crisc/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/crisc/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/crisc/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.6/microsoft.aspnetcore.authentication.jwtbearer.6.0.6.nupkg.sha512",
     "/Users/crisc/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",

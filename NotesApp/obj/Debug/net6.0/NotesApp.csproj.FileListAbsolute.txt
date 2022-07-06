@@ -68,3 +68,4 @@
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.Authentication.dll
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.Authentication.pdb
+/Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/BCrypt.Net-Next.dll
