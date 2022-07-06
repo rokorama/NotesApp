@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LA+8gRvWRdBCh23MlX5TgvoPANHg5Vc4ydaOCETfPZi5xn1ePQNuRa71aFbuj79ZYbpoAmIQL+cMYl4+8OyVZw==",
+  "dgSpecHash": "cSNdaQT2+lxwdP82uRVr4ExxTDF/qEB/EwBlxG2pusDSJh+Sd4WiAu2BNiGWZxleaIwEdPGwJMgvRV3qmL8UJA==",
   "success": true,
   "projectFilePath": "/Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/NotesApp.BusinessLogic.csproj",
   "expectedPackageFiles": [

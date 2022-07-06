@@ -2,10 +2,8 @@
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.DataAccess.runtimeconfig.json
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.DataAccess.dll
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.DataAccess.pdb
-/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.Authentication.dll
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.Models.dll
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.Models.pdb
-/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/bin/Debug/net6.0/NotesApp.Authentication.pdb
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/obj/Debug/net6.0/NotesApp.DataAccess.csproj.AssemblyReference.cache
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/obj/Debug/net6.0/NotesApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
 /Users/crisc/csharp/NotesApp/NotesApp.DataAccess/obj/Debug/net6.0/NotesApp.DataAccess.AssemblyInfoInputs.cache

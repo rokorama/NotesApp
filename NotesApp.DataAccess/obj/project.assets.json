@@ -635,16 +635,6 @@
           }
         }
       },
-      "NotesApp.Authentication/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/NotesApp.Authentication.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/NotesApp.Authentication.dll": {}
-        }
-      },
       "NotesApp.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1875,11 +1865,6 @@
         "version.txt"
       ]
     },
-    "NotesApp.Authentication/1.0.0": {
-      "type": "project",
-      "path": "../NotesApp.Authentication/NotesApp.Authentication.csproj",
-      "msbuildProject": "../NotesApp.Authentication/NotesApp.Authentication.csproj"
-    },
     "NotesApp.Models/1.0.0": {
       "type": "project",
       "path": "../NotesApp.Models/NotesApp.Models.csproj",
@@ -1891,7 +1876,6 @@
       "Microsoft.EntityFrameworkCore >= 6.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.6",
-      "NotesApp.Authentication >= 1.0.0",
       "NotesApp.Models >= 1.0.0"
     ]
   },
@@ -1920,9 +1904,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj": {
-              "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.Authentication/NotesApp.Authentication.csproj"
-            },
             "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj": {
               "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.Models/NotesApp.Models.csproj"
             }

@@ -1,12 +1,10 @@
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.BusinessLogic.deps.json
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.BusinessLogic.dll
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.BusinessLogic.pdb
-/Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.Authentication.dll
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.DataAccess.dll
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.Models.dll
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.DataAccess.pdb
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.Models.pdb
-/Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/bin/Debug/net6.0/NotesApp.Authentication.pdb
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/obj/Debug/net6.0/NotesApp.BusinessLogic.csproj.AssemblyReference.cache
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/obj/Debug/net6.0/NotesApp.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
 /Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/obj/Debug/net6.0/NotesApp.BusinessLogic.AssemblyInfoInputs.cache
