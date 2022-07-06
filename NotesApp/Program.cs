@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using NotesApp.BusinessLogic;
 using NotesApp.DataAccess;
+using NotesAppBusinessLogic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 string connString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connString));
+builder.Services.AddScoped<INoteRepository, NoteRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<INoteService, NoteService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
