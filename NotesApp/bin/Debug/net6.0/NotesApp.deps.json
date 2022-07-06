@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
+          "NotesApp.BusinessLogic": "1.0.0",
           "NotesApp.DataAccess": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
@@ -486,6 +487,15 @@
           "NotesApp.Authentication.dll": {}
         }
       },
+      "NotesApp.BusinessLogic/1.0.0": {
+        "dependencies": {
+          "NotesApp.DataAccess": "1.0.0",
+          "NotesApp.Models": "1.0.0"
+        },
+        "runtime": {
+          "NotesApp.BusinessLogic.dll": {}
+        }
+      },
       "NotesApp.DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.6",
@@ -855,6 +865,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "NotesApp.Authentication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NotesApp.BusinessLogic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

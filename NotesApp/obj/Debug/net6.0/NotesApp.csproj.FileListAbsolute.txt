@@ -65,3 +65,5 @@
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.DataAccess.pdb
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.Authentication.pdb
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.Models.pdb
+/Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.BusinessLogic.dll
+/Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.BusinessLogic.pdb

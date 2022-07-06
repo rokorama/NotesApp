@@ -1,3 +1,4 @@
+using NotesApp.DataAccess;
 using NotesApp.Models;
 using NotesAppBusinessLogic;
 
@@ -5,6 +6,15 @@ namespace NotesApp.BusinessLogic;
 
 public class NoteService : INoteService
 {
+    private readonly INoteRepository _noteRepo;
+    private readonly ICategoryRepository _categoryRepo;
+
+    public NoteService(INoteRepository noteRepo, ICategoryRepository categoryRepo)
+    {
+        _noteRepo = noteRepo;
+        _categoryRepo = categoryRepo;
+    }
+
     public NoteCategory AddCategory()
     {
         throw new NotImplementedException();
@@ -15,9 +25,9 @@ public class NoteService : INoteService
         throw new NotImplementedException();
     }
 
-    public Note AddNote()
+    public Note AddNote(NoteDto noteDto)
     {
-        throw new NotImplementedException();
+        return _noteRepo.AddNote(noteDto);
     }
 
     public NoteCategory EditCategory(NoteCategory category)

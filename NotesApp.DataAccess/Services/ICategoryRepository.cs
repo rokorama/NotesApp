@@ -4,7 +4,7 @@ namespace NotesApp.DataAccess;
 
 public interface ICategoryRepository
 {
-    public NoteCategory AddCategory();
-    public NoteCategory RemoveCategory(Guid id);
-    public NoteCategory EditCategory(NoteCategory category);
+    public NoteCategory AddCategory(NoteCategoryDto categoryDto);
+    public NoteCategory EditCategory(Guid id, NoteCategory editedCategory);
+    public bool RemoveCategory(Guid id);
 }

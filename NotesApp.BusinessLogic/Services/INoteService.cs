@@ -4,7 +4,7 @@ namespace NotesAppBusinessLogic;
 
 public interface INoteService
 {
-    public Note AddNote();
+    public Note AddNote(NoteDto noteDto);
     public Note EditNote(Note note);
     public Note RemoveNote(Guid id);
     public Note AddImage(Note note, NoteImage image);

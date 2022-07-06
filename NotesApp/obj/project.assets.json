@@ -716,6 +716,20 @@
           "bin/placeholder/NotesApp.Authentication.dll": {}
         }
       },
+      "NotesApp.BusinessLogic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "NotesApp.DataAccess": "1.0.0",
+          "NotesApp.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NotesApp.BusinessLogic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotesApp.BusinessLogic.dll": {}
+        }
+      },
       "NotesApp.DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2093,6 +2107,11 @@
       "path": "../NotesApp.Authentication/NotesApp.Authentication.csproj",
       "msbuildProject": "../NotesApp.Authentication/NotesApp.Authentication.csproj"
     },
+    "NotesApp.BusinessLogic/1.0.0": {
+      "type": "project",
+      "path": "../NotesApp.BusinessLogic/NotesApp.BusinessLogic.csproj",
+      "msbuildProject": "../NotesApp.BusinessLogic/NotesApp.BusinessLogic.csproj"
+    },
     "NotesApp.DataAccess/1.0.0": {
       "type": "project",
       "path": "../NotesApp.DataAccess/NotesApp.DataAccess.csproj",
@@ -2108,6 +2127,7 @@
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
+      "NotesApp.BusinessLogic >= 1.0.0",
       "NotesApp.DataAccess >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2137,6 +2157,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "/Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/NotesApp.BusinessLogic.csproj": {
+              "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.BusinessLogic/NotesApp.BusinessLogic.csproj"
+            },
             "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj": {
               "projectPath": "/Users/crisc/csharp/NotesApp/NotesApp.DataAccess/NotesApp.DataAccess.csproj"
             }

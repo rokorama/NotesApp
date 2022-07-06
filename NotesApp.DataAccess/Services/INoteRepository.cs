@@ -4,7 +4,7 @@ namespace NotesApp.DataAccess;
 
 public interface INoteRepository
 {
-    public Note AddNote();
-    public Note RemoveNote(Guid id);
-    public Note EditNote(Note note);
+    public Note AddNote(NoteDto noteDto);
+    public Note EditNote(Guid id, Note note);
+    public bool RemoveNote(Guid id);
 }
