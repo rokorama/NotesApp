@@ -66,3 +66,5 @@
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.BusinessLogic.dll
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.BusinessLogic.pdb
 /Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.Authentication.dll
+/Users/crisc/csharp/NotesApp/NotesApp/bin/Debug/net6.0/NotesApp.Authentication.pdb

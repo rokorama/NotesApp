@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using NotesApp.Authentication;
 using NotesApp.BusinessLogic;
 using NotesApp.DataAccess;
 using NotesAppBusinessLogic;
@@ -9,15 +10,20 @@ using NotesAppBusinessLogic;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-
 string connString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(connString));
+
+builder.Services.AddControllers();
+
+// Refactor these eventually
 builder.Services.AddScoped<INoteRepository, NoteRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<INoteService, NoteService>();
 
-builder.Services.AddControllers();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IJwtService, JwtService>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

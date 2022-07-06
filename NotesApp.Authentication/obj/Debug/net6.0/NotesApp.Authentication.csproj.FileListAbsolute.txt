@@ -10,3 +10,8 @@
 /Users/crisc/csharp/NotesApp/NotesApp.Authentication/obj/Debug/net6.0/refint/NotesApp.Authentication.dll
 /Users/crisc/csharp/NotesApp/NotesApp.Authentication/obj/Debug/net6.0/NotesApp.Authentication.pdb
 /Users/crisc/csharp/NotesApp/NotesApp.Authentication/obj/Debug/net6.0/ref/NotesApp.Authentication.dll
+/Users/crisc/csharp/NotesApp/NotesApp.Authentication/bin/Debug/net6.0/NotesApp.DataAccess.dll
+/Users/crisc/csharp/NotesApp/NotesApp.Authentication/bin/Debug/net6.0/NotesApp.Models.dll
+/Users/crisc/csharp/NotesApp/NotesApp.Authentication/bin/Debug/net6.0/NotesApp.DataAccess.pdb
+/Users/crisc/csharp/NotesApp/NotesApp.Authentication/bin/Debug/net6.0/NotesApp.Models.pdb
+/Users/crisc/csharp/NotesApp/NotesApp.Authentication/obj/Debug/net6.0/NotesApp.Authentication.csproj.CopyComplete

@@ -30,6 +30,7 @@ public class UserService : IUserService
         CreatePassword(password, out byte[] passwordHash, out byte[] passwordSalt);
         var User = new User()
         {
+            Id = Guid.NewGuid(),
             Username = username,
             PasswordHash = passwordHash,
             PasswordSalt = passwordSalt,

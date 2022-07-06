@@ -15,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NotesApp.DataAccess\NotesApp.DataAccess.csproj" />
     <ProjectReference Include="..\NotesApp.BusinessLogic\NotesApp.BusinessLogic.csproj" />
+    <ProjectReference Include="..\NotesApp.Authentication\NotesApp.Authentication.csproj" />
   </ItemGroup>
 
 </Project>
