@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NotesApp.Authentication;
@@ -23,10 +24,16 @@ public class NotesController : ControllerBase
 
     [Authorize]
     [HttpPost("addNote")]
-    public ActionResult<Note> AddNote([FromBody] NoteDto noteDto)
+    public ActionResult<Note> AddNote([FromForm] NoteDto noteDto)
     {
         var userId = _userService.GetUser(this.User.Identity.Name).Id;
-        var result = _noteService.AddNote(noteDto, userId);
+        var category = _noteService.GetCategory(noteDto.CategoryName);
+        if (category == null)
+        {
+            category = _noteService.AddCategory(new CategoryDto() {Name = noteDto.CategoryName});
+        }
+        var image = _noteService.ConvertImageUploadToObject(noteDto.Image);
+        var result = _noteService.AddNote(noteDto, category, image, userId);
         if (result == null)
             return BadRequest();
         return Ok(result);
@@ -46,6 +53,34 @@ public class NotesController : ControllerBase
     public ActionResult<bool> EditNote(Guid id, Note editedNote)
     {
         var result = _noteService.EditNote(id, editedNote);
+        if (result == null)
+            return BadRequest();
+        return Ok();
+    }
+
+    [Authorize]
+    [HttpGet("getNotes")]
+    public ActionResult<ICollection<Note>> GetNotes()
+    {
+        var userId = _userService.GetUser(this.User.Identity.Name).Id;
+        var result = _noteService.GetNotes(userId);
+        if (result == null)
+            return BadRequest();
+        return Ok(result);
+    }
+
+    [HttpPost("uploadImage")]
+    public ActionResult AddImage([FromForm] ImageDto imageRequest)
+    {
+        using var memoryStream = new MemoryStream();
+        imageRequest.Image.CopyTo(memoryStream);
+        var imageBytes = memoryStream.ToArray();
+        var entry = new Image()
+        {
+            Data = imageBytes,
+            ContentType = imageRequest.Image.ContentType
+        };
+        var result = _noteService.AddImage(entry);
         if (result == null)
             return BadRequest();
         return Ok();

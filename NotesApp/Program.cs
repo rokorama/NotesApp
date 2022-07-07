@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,9 +16,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(conn
 
 builder.Services.AddControllers();
 
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 // Refactor these eventually
 builder.Services.AddScoped<INoteRepository, NoteRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<INoteService, NoteService>();
 
 builder.Services.AddScoped<IUserService, UserService>();

@@ -11,7 +11,7 @@ public class NoteRepository : INoteRepository
     {
         _appDbContext = appDbContext;
     }
-    public Note AddNote(NoteDto noteDto, Guid userId)
+    public Note AddNote(NoteDto noteDto, Category category, Image image, Guid userId)
     {
         var entry = new Note()
         {
@@ -19,8 +19,8 @@ public class NoteRepository : INoteRepository
             UserId = userId,
             Title = noteDto.Title,
             Content = noteDto.Content,
-            CategoryId = noteDto.CategoryId,
-            ImageId = null
+            CategoryId = category.Id,
+            Image = image
         };
         _appDbContext.Notes.Add(entry);
         var result = _appDbContext.SaveChanges();
@@ -35,7 +35,7 @@ public class NoteRepository : INoteRepository
         dbEntry.Title = editedNote.Title;
         dbEntry.Content = editedNote.Content;
         dbEntry.CategoryId = editedNote.CategoryId;
-        dbEntry.ImageId = editedNote.ImageId;
+        dbEntry.Image = editedNote.Image;
 
         _appDbContext.Entry(dbEntry).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
         
@@ -59,4 +59,9 @@ public class NoteRepository : INoteRepository
         return false;
     }
 
+    public ICollection<Note> GetNotes(Guid id)
+    {
+        return _appDbContext.Notes.Where(n => n.UserId == id)
+                                  .ToList();
+    }
 }

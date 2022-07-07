@@ -51,4 +51,9 @@ public class CategoryRepository : ICategoryRepository
             return true;
         return false;
     }
+
+    public Category GetCategory(string name)
+    {
+        return _appDbContext.Categories.SingleOrDefault(c => c.Name == name);
+    }
 }

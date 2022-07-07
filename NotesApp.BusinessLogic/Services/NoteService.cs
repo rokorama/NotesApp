@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using NotesApp.DataAccess;
 using NotesApp.Models;
 using NotesAppBusinessLogic;
@@ -8,11 +9,13 @@ public class NoteService : INoteService
 {
     private readonly INoteRepository _noteRepo;
     private readonly ICategoryRepository _categoryRepo;
+    private readonly IImageRepository _imageRepo;
 
-    public NoteService(INoteRepository noteRepo, ICategoryRepository categoryRepo)
+    public NoteService(INoteRepository noteRepo, ICategoryRepository categoryRepo, IImageRepository imageRepo)
     {
         _noteRepo = noteRepo;
         _categoryRepo = categoryRepo;
+        _imageRepo = imageRepo;
     }
 
     public Category AddCategory(CategoryDto categoryDto)
@@ -20,14 +23,15 @@ public class NoteService : INoteService
         return _categoryRepo.AddCategory(categoryDto);
     }
 
-    public Note AddImage(Note note, Image image)
+    public Image AddImage(Image image)
     {
-        throw new NotImplementedException();
+        return _imageRepo.AddImage(image);
     }
 
-    public Note AddNote(NoteDto noteDto, Guid userId)
+    public Note AddNote(NoteDto noteDto, Category category, Image image, Guid userId)
     {
-        return _noteRepo.AddNote(noteDto, userId);
+
+        return _noteRepo.AddNote(noteDto, category, image, userId);
     }
 
     public Category EditCategory(Guid id, string editedName)
@@ -40,7 +44,7 @@ public class NoteService : INoteService
         return _categoryRepo.EditCategory(editedCategory);
     }
 
-    public Note EditImage(Note note, Image image)
+    public Image EditImage(Note note, Image image)
     {
         throw new NotImplementedException();
     }
@@ -54,7 +58,7 @@ public class NoteService : INoteService
             Title = note.Title,
             Content = note.Content,
             CategoryId = note.CategoryId,
-            ImageId = null
+            Image = note.Image
         };
         return _noteRepo.EditNote(editedNote);
     }
@@ -66,11 +70,35 @@ public class NoteService : INoteService
 
     public bool RemoveImage(Guid id)
     {
-        throw new NotImplementedException();
+        return _imageRepo.RemoveImage(id);
     }
 
     public bool RemoveNote(Guid id)
     {
         return _noteRepo.RemoveNote(id);
+    }
+
+    public ICollection<Note> GetNotes(Guid userId)
+    {
+        return _noteRepo.GetNotes(userId);
+    }
+
+    public Category GetCategory(string name)
+    {
+        return _categoryRepo.GetCategory(name);
+    }
+
+    public Image ConvertImageUploadToObject(IFormFile input)
+    {
+        using var memoryStream = new MemoryStream();
+        input.CopyTo(memoryStream);
+        var imageBytes = memoryStream.ToArray();
+        var output = new Image()
+        {
+            Id = Guid.NewGuid(),
+            Data = imageBytes,
+            ContentType = input.ContentType
+        };
+        return output;
     }
 }
