@@ -11,6 +11,7 @@ public class CategoryRepository : ICategoryRepository
     {
         _appDbContext = appDbContext;
     }
+    
     public Category AddCategory(CategoryDto categoryDto)
     {
         var entry = new Category()

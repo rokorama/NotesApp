@@ -26,7 +26,7 @@ public class UserController : ControllerBase
         var usernameTaken = _userService.GetUser(userDto.Username) == null ? false : true;
         if (usernameTaken)
             return BadRequest($"This username is taken, please try another");
-        var result = _userService.PostUserToDb(userDto.Username, userDto.Password);
+        var result = _userService.CreateUser(userDto.Username, userDto.Password);
         if (result == null)
             return BadRequest();
         return Ok(result);

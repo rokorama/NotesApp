@@ -17,14 +17,10 @@ public class ImageRepository : IImageRepository
         var result = _dbContext.SaveChanges();
         if (result == 0)
         {
-            return image;
+            // not good
+            return null;
         }
-        return null;
-    }
-
-    public Image GetImage(Guid id)
-    {
-        return _dbContext.Images.First(i => i.Id == id);
+        return image;
     }
 
     public Image EditImage(Image newImage)
@@ -40,6 +36,7 @@ public class ImageRepository : IImageRepository
             _dbContext.SaveChanges();
             return newImage;
         }
+        // not good
         catch (DbUpdateConcurrencyException)
         {
             return null;

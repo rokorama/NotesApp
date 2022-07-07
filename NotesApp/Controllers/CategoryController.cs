@@ -8,19 +8,19 @@ namespace NotesApp.Controllers;
 [ApiController]
 public class CategoryController : ControllerBase
 {
-    private readonly INoteService _noteService;
+    private readonly ICategoryService _categoryService;
     private readonly ILogger _logger;
 
-    public CategoryController(ILogger<NotesController> logger, INoteService noteService)
+    public CategoryController(ILogger<NotesController> logger, ICategoryService categoryService)
     {
         _logger = logger;
-        _noteService = noteService;
+        _categoryService = categoryService;
     }
 
     [HttpPost("addCategory")]
-    public ActionResult<Note> AddNote([FromBody] CategoryDto categoryDto)
+    public ActionResult<Note> AddCategory([FromBody] CategoryDto categoryDto)
     {
-        var result = _noteService.AddCategory(categoryDto);
+        var result = _categoryService.AddCategory(categoryDto);
         if (result == null)
             return BadRequest();
         return Ok(result);
@@ -29,17 +29,17 @@ public class CategoryController : ControllerBase
     [HttpPut("editCategory")]
     public ActionResult<bool> EditCategory(Guid id, string editedName)
     {
-        var result = _noteService.EditCategory(id, editedName);
+        var result = _categoryService.EditCategory(id, editedName);
         if (result == null)
             return BadRequest();
         return Ok();
     }
 
-    [HttpDelete("deleteCategory")]
+    [HttpDelete("deleteCategory/{id}")]
     public ActionResult<bool> RemoveCategory(Guid id)
     {
-        if (!_noteService.RemoveCategory(id))
-            return BadRequest();
-        return Ok();
+        if (!_categoryService.RemoveCategory(id))
+            return BadRequest($"Category could not be removed.");
+        return Ok($"Category successfully removed.");
     }
 }

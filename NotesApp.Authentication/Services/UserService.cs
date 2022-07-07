@@ -19,26 +19,20 @@ public class UserService : IUserService
         return _userRepo.GetUser(username);
     }
 
-    public User PostUserToDb(string username, string password)
-    {
-        var User = CreateUser(username, password);
-        _userRepo.AddNewUser(User);
-        return User;
-    }
-
     public User CreateUser(string username, string password)
     {
         CreatePassword(password, out string passwordHash);
-        var User = new User()
+        var newUser = new User()
         {
             Id = Guid.NewGuid(),
             Username = username,
             PasswordHash = passwordHash
         };
-        return User;
+        _userRepo.AddNewUser(newUser);
+        return newUser;
     }
 
-    public void CreatePassword(string password, out string passwordHash)
+    private void CreatePassword(string password, out string passwordHash)
     {
         passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
     }

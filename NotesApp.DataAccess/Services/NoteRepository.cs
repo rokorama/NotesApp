@@ -59,9 +59,15 @@ public class NoteRepository : INoteRepository
         return false;
     }
 
-    public ICollection<Note> GetNotes(Guid id)
+    public ICollection<Note> GetNotes(Guid userId)
     {
-        return _appDbContext.Notes.Where(n => n.UserId == id)
+        return _appDbContext.Notes.Where(n => n.UserId == userId)
+                                  .Include(n => n.Image)
                                   .ToList();
+    }
+
+    public Note GetNote(Guid noteId)
+    {
+        return _appDbContext.Notes.Find(noteId);
     }
 }
